@@ -3,3 +3,6 @@
 
 line
 gst_demo
+
+gst/gst.cuda-proj
+gst/ringbuffer.v
