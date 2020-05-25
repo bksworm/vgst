@@ -1,15 +1,17 @@
 module gst
 
-struct GMainLoop  {
+struct GMainLoop {
 	gl &C.GMainLoop
 }
 
 pub fn new_main_loop() &GMainLoop {
 	cloop := C.g_main_loop_new(0, 0)
-	return &GMainLoop{gl: cloop}
+	return &GMainLoop{
+		gl: cloop
+	}
 }
 
-pub fn  (l GMainLoop) unref(){
+pub fn (l GMainLoop) unref() {
 	C.gst_object_unref(l.gl)
 }
 
